@@ -25,7 +25,7 @@ Blockly.Blocks['finance_stock_data'] = {
         ["漲跌幅", "change"]
       ]), "type");
     this.setOutput(true, null);
-    this.setColour(230);
+    this.setColour(210);
     this.setTooltip("");
     this.setHelpUrl("");
   }
