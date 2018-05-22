@@ -1,0 +1,4 @@
+<category id="catFinance">
+  <block type="finance_stock"></block>
+  <block type="finance_stock_data"></block>
+</category>
