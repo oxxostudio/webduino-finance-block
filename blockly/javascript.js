@@ -1,7 +1,6 @@
 Blockly.JavaScript['finance_stock'] = function(block) {
-  var name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
-  var code = 'finance_stock(' + name + ',function(data){\n' +
+  var code = 'finance_stock(function(data){\n' +
     statements_do + '\n});';
   return code;
 };
@@ -9,6 +8,7 @@ Blockly.JavaScript['finance_stock'] = function(block) {
 Blockly.JavaScript['finance_stock_data'] = function(block) {
   var name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
   var type = block.getFieldValue('type');
+  name = name.replace(/'/g,'');
   var code = 'finance_stock_data("' + name + '","' + type + '",data)';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };

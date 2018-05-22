@@ -2,9 +2,9 @@
 
   'use strict';
 
-  function finance_stock(name, callback) {
+  function finance_stock(callback) {
     $.post('https://script.google.com/macros/s/AKfycbwXNkTBijbLIBCZ22oRP3ZqGUoYB4QQIvy4PUQrWaN1R1pHP57g/exec', {
-        name: name
+        type: 'stock'
       },
       function(data) {
         callback([data, 'stock']);
@@ -16,7 +16,7 @@
     if (e[1] == 'stock') {      
      for(var i=0; i<result.length; i++){
       if(result[i].name.indexOf(name)!=-1){
-        return data[i][type];
+        return result[i][type];
       }else{
         return '查無資料';
       }
