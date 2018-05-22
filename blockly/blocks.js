@@ -20,8 +20,8 @@ Blockly.Blocks['finance_stock_data'] = {
   init: function() {
     this.appendDummyInput()
       .appendField(new Blockly.FieldDropdown([
-        ["即時股價", "1"],
-        ["漲跌", "2"]
+        ["即時股價", "price"],
+        ["漲跌", "change"]
       ]), "type");
     this.setOutput(true, null);
     this.setColour(180);

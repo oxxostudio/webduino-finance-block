@@ -3,7 +3,7 @@
   'use strict';
 
   function finance_stock(name, callback) {
-    $.post('https://script.google.com/macros/s/AKfycbxfzHxi1ok-NxVGBN5vAU-VuyGpYV0VQt8TSGeMe8w0Ompvw6o/exec', {
+    $.post('https://script.google.com/macros/s/AKfycbwXNkTBijbLIBCZ22oRP3ZqGUoYB4QQIvy4PUQrWaN1R1pHP57g/exec', {
         name: name
       },
       function(data) {
@@ -11,11 +11,14 @@
       });
   }
 
-  function finance_stock_data(e,type) {
+  function finance_stock_data(e, type) {
     let result = e[0];
     if (e[1] == 'stock') {
-      type = type * 1 - 1;
-      return result[type];
+      if(result=='no data'){
+        return '查無資料';
+      }else{
+        return result[type];
+      }
     } else {
       return '資料格式錯誤';
     }
