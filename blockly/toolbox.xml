@@ -6,4 +6,6 @@
       </block>
     </value></block>
   <block type="finance_stock_data"></block>
+  <block type="finance_rate"></block>
+  <block type="finance_rate_data"></block>
 </category>

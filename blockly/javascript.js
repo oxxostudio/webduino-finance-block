@@ -2,7 +2,7 @@ Blockly.JavaScript['finance_stock'] = function(block) {
   var name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
   var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
   var code = 'finance_stock('+name+',function(data){\n' +
-      statements_do + '\n});';;
+      statements_do + '\n});';
   return code;
 };
 
@@ -12,3 +12,17 @@ Blockly.JavaScript['finance_stock_data'] = function(block) {
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
+Blockly.JavaScript['finance_rate'] = function(block) {
+  var statements_do = Blockly.JavaScript.statementToCode(block, 'do');
+  var code = 'finance_rate(function(data){\n' +
+      statements_do + '\n});';
+  return code;
+};
+
+
+Blockly.JavaScript['inance_rate_data'] = function(block) {
+  var name = block.getFieldValue('name');
+  var type = block.getFieldValue('type');
+  var code = 'weather_forecast_data("' + name + '","' + type + '",data)';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
