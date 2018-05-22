@@ -24,7 +24,7 @@ Blockly.Blocks['finance_stock_data'] = {
         ["漲跌", "change"]
       ]), "type");
     this.setOutput(true, null);
-    this.setColour(180);
+    this.setColour(210);
     this.setTooltip("");
     this.setHelpUrl("");
   }
@@ -39,7 +39,7 @@ Blockly.Blocks['finance_rate'] = {
       .appendField("執行");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(270);
+    this.setColour(0);
     this.setTooltip("");
     this.setHelpUrl("");
   }

@@ -23,6 +23,6 @@ Blockly.JavaScript['finance_rate'] = function(block) {
 Blockly.JavaScript['finance_rate_data'] = function(block) {
   var name = block.getFieldValue('name');
   var type = block.getFieldValue('type');
-  var code = 'weather_forecast_data("' + name + '","' + type + '",data)';
+  var code = 'finance_rate_data("' + name + '","' + type + '",data)';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
