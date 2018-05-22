@@ -1,10 +1,7 @@
 Blockly.Blocks['finance_stock'] = {
   init: function() {
-    this.appendValueInput("name")
-      .setCheck(null)
-      .appendField("取得");
     this.appendDummyInput()
-      .appendField("股票資訊");
+      .appendField("取得股票資訊");
     this.appendStatementInput("do")
       .setCheck(null)
       .appendField("執行");
@@ -18,13 +15,17 @@ Blockly.Blocks['finance_stock'] = {
 
 Blockly.Blocks['finance_stock_data'] = {
   init: function() {
+    this.appendValueInput("name")
+      .setCheck(null)
+      .appendField("股票名稱 or 代號");
     this.appendDummyInput()
+      .appendField("的")
       .appendField(new Blockly.FieldDropdown([
         ["即時股價", "price"],
-        ["漲跌", "change"]
+        ["漲跌幅", "change"]
       ]), "type");
     this.setOutput(true, null);
-    this.setColour(210);
+    this.setColour(230);
     this.setTooltip("");
     this.setHelpUrl("");
   }

@@ -1,11 +1,12 @@
 <category id="catFinance">
-  <block type="finance_stock">
+  <block type="finance_stock"></block>
+  <block type="finance_stock_data"> 	
     <value name="name">
       <block type="text">
         <field name="TEXT"></field>
       </block>
-    </value></block>
-  <block type="finance_stock_data"></block>
+    </value>
+  </block>
   <block type="finance_rate"></block>
   <block type="finance_rate_data"></block>
 </category>

@@ -11,13 +11,14 @@
       });
   }
 
-  function finance_stock_data(e, type) {
+  function finance_stock_data(name, type, e) {
     let result = e[0];
-    if (e[1] == 'stock') {
-      if(result=='no data'){
-        return '查無資料';
+    if (e[1] == 'stock') {      
+     for(var i=0; i<result.length; i++){
+      if(result[i].name.indexOf(name)!=-1){
+        return data[i][type];
       }else{
-        return result[type];
+        return '查無資料';
       }
     } else {
       return '資料格式錯誤';
