@@ -1,1 +1,1 @@
-MSG.catWeather = "Weather";
+MSG.catFinance = "Finance";
