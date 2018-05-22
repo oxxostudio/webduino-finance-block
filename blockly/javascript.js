@@ -8,8 +8,7 @@ Blockly.JavaScript['finance_stock'] = function(block) {
 Blockly.JavaScript['finance_stock_data'] = function(block) {
   var name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
   var type = block.getFieldValue('type');
-  name = name.replace(/'/g,'');
-  var code = 'finance_stock_data("' + name + '","' + type + '",data)';
+  var code = 'finance_stock_data(' + name + ',"' + type + '",data)';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
