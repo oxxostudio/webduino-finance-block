@@ -37,7 +37,7 @@
     let arr = e[0];
     if (e[1] == 'rate') {
       type = type * 1 - 1;
-      return e[name][type];
+      return arr[name][type];
     } else {
       return '資料格式錯誤';
     }
