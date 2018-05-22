@@ -7,7 +7,7 @@ Blockly.JavaScript['finance_stock'] = function(block) {
 };
 
 Blockly.JavaScript['finance_stock_data'] = function(block) {
-  var dropdown_type = block.getFieldValue('type');
+  var type = block.getFieldValue('type');
   var code = 'finance_stock_data(data,"' + type + '")';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };

@@ -19,10 +19,13 @@ Blockly.Blocks['finance_stock'] = {
 Blockly.Blocks['finance_stock_data'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField(new Blockly.FieldDropdown([["即時股價","1"], ["漲跌","2"]]), "type");
+      .appendField(new Blockly.FieldDropdown([
+        ["即時股價", "1"],
+        ["漲跌", "2"]
+      ]), "type");
     this.setOutput(true, null);
     this.setColour(180);
- this.setTooltip("");
- this.setHelpUrl("");
+    this.setTooltip("");
+    this.setHelpUrl("");
   }
 };
