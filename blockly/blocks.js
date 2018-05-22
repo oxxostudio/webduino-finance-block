@@ -71,7 +71,7 @@ Blockly.Blocks['finance_rate_data'] = {
         ["越南盾 ( VND )", "越南盾(VND)"],
         ["馬來幣 ( MYR )", "馬來幣(MYR)"],
         ["人民幣 ( CNY )", "人民幣(CNY)"]
-      ]), "location")
+      ]), "name")
       .appendField("類別")
       .appendField(new Blockly.FieldDropdown([
         ["買入", "1"],
