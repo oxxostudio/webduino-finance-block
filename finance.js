@@ -13,6 +13,7 @@
 
   function finance_stock_data(name, type, e) {
     let result = e[0];
+    console.log(name);
     if (e[1] == 'stock') {
       for (var i = 0; i < result.length; i++) {
         if (result[i].name == name || result[i].uid == name) {
