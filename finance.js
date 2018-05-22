@@ -13,14 +13,14 @@
 
   function finance_stock_data(name, type, e) {
     let result = e[0];
-    let reply = 0;
+    let reply = 'no';
     if (e[1] == 'stock') {
       for (let i = 0; i < result.length; i++) {
         if (result[i].name == name || result[i].uid == name) {
           reply = result[i][type];
         }
       }
-      if (reply == 0) {
+      if (reply == 'no') {
         return '查無資料';
       } else {
         return reply;
