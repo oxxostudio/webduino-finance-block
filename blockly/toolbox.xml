@@ -1,4 +1,4 @@
-<category id="catFinance">
+<category id="catFinance"  COLOUR="230">
   <block type="finance_stock"></block>
   <block type="finance_stock_data"> 	
     <value name="name">

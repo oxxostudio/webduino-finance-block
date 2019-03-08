@@ -1,60 +1,62 @@
-+(function(window, document) {
++(function (window, document) {
 
   'use strict';
 
-  function finance_stock(callback) {
-    $.post('https://script.google.com/macros/s/AKfycbwXNkTBijbLIBCZ22oRP3ZqGUoYB4QQIvy4PUQrWaN1R1pHP57g/exec', {
-        type: 'stock'
-      },
-      function(data) {
-        callback([data, 'stock']);
-      });
+  window._stock_ = '';
+  window.finance_stock = function () {
+    return fetch('https://script.google.com/macros/s/AKfycbwXNkTBijbLIBCZ22oRP3ZqGUoYB4QQIvy4PUQrWaN1R1pHP57g/exec', {
+      method: 'post',
+      body: encodeURI(JSON.stringify({ type: 'stock' })), // fetch 的中文會變亂碼，要用 encodeURI 轉換
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+      }
+    }).then(res => {
+      return res.json();
+    }).then(data => {
+      _stock_ = data;
+      console.log(data);
+    });
   }
 
-  function finance_stock_data(name, type, e) {
-    let result = e[0];
+  window.finance_stock_data = function (name, type) {
+    let result = _stock_;
     let reply = 'no';
-    if (e[1] == 'stock') {
-      for (let i = 0; i < result.length; i++) {
-        if (result[i].name == name || result[i].uid == name) {
-          reply = result[i][type];
-        }
+    for (let i = 0; i < result.length; i++) {
+      if (result[i].name == name || result[i].uid == name) {
+        reply = result[i][type];
       }
-      if (reply == 'no') {
-        return '查無資料';
-      } else {
-        return reply;
-      }
+    }
+    if (reply == 'no') {
+      return '查無資料';
     } else {
-      return '資料格式錯誤';
+      return reply;
     }
   }
 
-  function finance_rate(callback) {
-    $.post('https://script.google.com/macros/s/AKfycbz3x2FzVG_pH0nlcrcfB2q4nsNjXBQLnkanpfIi9E_3_2mZagR4/exec', {
-        type: 'rate'
-      },
-      function(data) {
-        callback([data, 'rate']);
-      });
+  window._rate_ = '';
+  window.finance_rate = function (callback) {
+    return fetch('https://script.google.com/macros/s/AKfycbz3x2FzVG_pH0nlcrcfB2q4nsNjXBQLnkanpfIi9E_3_2mZagR4/exec', {
+      method: 'post',
+      body: encodeURI(JSON.stringify({ type: 'rate' })), // fetch 的中文會變亂碼，要用 encodeURI 轉換
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+      }
+    }).then(res => {
+      return res.json();
+    }).then(data => {
+      _rate_ = data;
+      console.log(data);
+    });
   }
 
-  function finance_rate_data(name, type, e) {
-    let arr = e[0];
-    if (e[1] == 'rate') {
-      type = type * 1 - 1;
-      return arr[name][type];
-    } else {
-      return '資料格式錯誤';
-    }
+  window.finance_rate_data = function (name, type) {
+    let arr = _rate_;
+    type = type * 1 - 1;
+    return arr[name][type];
   }
 
 
 
 
-  window.finance_rate_data = finance_rate_data;
-  window.finance_rate = finance_rate;
-  window.finance_stock_data = finance_stock_data;
-  window.finance_stock = finance_stock;
 
 }(window, window.document));

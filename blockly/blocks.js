@@ -1,10 +1,7 @@
 Blockly.Blocks['finance_stock'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
       .appendField("取得股票資訊");
-    this.appendStatementInput("do")
-      .setCheck(null)
-      .appendField("執行");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(230);
@@ -14,7 +11,7 @@ Blockly.Blocks['finance_stock'] = {
 };
 
 Blockly.Blocks['finance_stock_data'] = {
-  init: function() {
+  init: function () {
     this.appendValueInput("name")
       .setCheck(null)
       .appendField("股票名稱 or 代號");
@@ -32,24 +29,20 @@ Blockly.Blocks['finance_stock_data'] = {
 };
 
 Blockly.Blocks['finance_rate'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
       .appendField("取得台灣銀行牌告匯率");
-    this.appendStatementInput("do")
-      .setCheck(null)
-      .appendField("執行");
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
-    this.setColour(0);
+    this.setColour(230);
     this.setTooltip("");
     this.setHelpUrl("");
   }
 };
 
 
-
 Blockly.Blocks['finance_rate_data'] = {
-  init: function() {
+  init: function () {
     this.appendDummyInput()
       .appendField("幣別")
       .appendField(new Blockly.FieldDropdown([
