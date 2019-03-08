@@ -6,7 +6,7 @@ Blockly.JavaScript['finance_stock'] = function(block) {
 Blockly.JavaScript['finance_stock_data'] = function(block) {
   var name = Blockly.JavaScript.valueToCode(block, 'name', Blockly.JavaScript.ORDER_ATOMIC);
   var type = block.getFieldValue('type');
-  var code = 'finance_stock_data(' + name + ',"' + type + ')';
+  var code = 'finance_stock_data(' + name + ',"' + type + '")';
   return [code, Blockly.JavaScript.ORDER_ATOMIC];
 };
 
