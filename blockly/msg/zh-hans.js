@@ -1,1 +1,1 @@
-MSG.catFinance = "金融資訊";
+MSG.catFinance = "金融資訊"; 
